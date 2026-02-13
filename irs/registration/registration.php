@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Account Management
+ * Sub-Plugin Name: Account Management
  * Plugin URI: https://example.com/registration
  * Description: نظام متقدم لإدارة الحسابات والعضويات يعتمد على الرقم القومي والتحقق عبر البريد الإلكتروني.
  * Version: 1.0.0
@@ -41,5 +41,5 @@ add_filter( 'wp_mail_from_name', function( $name ) {
     return get_bloginfo( 'name' );
 });
 
-register_activation_hook( __FILE__, array( 'Member_Files', 'activate' ) );
-register_deactivation_hook( __FILE__, array( 'Member_Files', 'deactivate' ) );
+// register_activation_hook( __FILE__, array( 'Member_Files', 'activate' ) );
+// register_deactivation_hook( __FILE__, array( 'Member_Files', 'deactivate' ) );

@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: الأسئلة الشائعة 
+ * Sub-Plugin Name: الأسئلة الشائعة
  * Description: إضافة FAQ احترافية متوافقة مع Astra، تدعم الأقسام، التقييم، والفلترة. تطوير الدكتور أحمد مبروك.
  * Version: 4.5
  * Author: الدكتور أحمد مبروك
@@ -8,8 +8,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-// 1. إنشاء جدول التقييمات عند تفعيل الإضافة
-register_activation_hook( __FILE__, 'faq_pro_install' );
+// 1. إنشاء جدول التقييمات عند تفعيل الإضافة (Moved to main irs.php)
+// register_activation_hook( __FILE__, 'faq_pro_install' );
 function faq_pro_install() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'faq_votes';
