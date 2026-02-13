@@ -25,6 +25,13 @@ class Member_Files_Profile {
 	public function render_profile() {
 		$user_id = get_current_user_id();
 		$user = get_userdata( $user_id );
+
+        // Syndicate Admin View (Professional Dashboard)
+        if ( in_array('syndicate_admin', (array)$user->roles) || current_user_can('manage_options') ) {
+            require_once REGISTRATION_PATH . 'includes/class-syndicate-admin-dashboard.php';
+            $admin_dashboard = new Syndicate_Admin_Dashboard();
+            return $admin_dashboard->render_dashboard();
+        }
 		
         $data = array();
         foreach ( Member_Files::$profile_fields as $key => $label ) {

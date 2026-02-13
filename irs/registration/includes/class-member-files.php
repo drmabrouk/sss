@@ -59,8 +59,8 @@ class Member_Files {
     public static function update_user_data( $user_id, $data ) {
         // Core mappings from field keys to meta keys (including fallbacks for integration)
         $mapping = array(
-            'nid'              => array( 'nid', '_services_national_id', 'national_id' ),
-            'member_no'        => array( 'member_no', 'membership_number', 'membership_no' ),
+            'nid'              => array( 'nid', '_services_national_id', 'national_id', '_mf_national_id', 'mf_national_id' ),
+            'member_no'        => array( 'member_no', 'membership_number', 'membership_no', '_mf_member_num', 'mf_member_num' ),
             'name'             => array( 'name', 'full_name', 'mf_full_name' ),
             'email'            => array( 'email' ),
             'phone'            => array( 'phone', 'billing_phone' ),
@@ -216,9 +216,27 @@ class Member_Files {
             add_role( 'pending_member', 'عضو معلق', array( 'read' => true ) );
         }
         
-        // Use "Union Member" role as requested
+        // Use "Union Member" role
         if ( ! get_role( 'union_member' ) ) {
             add_role( 'union_member', 'عضو نقابة', array( 
+                'read' => true,
+                'upload_files' => true,
+            ) );
+        }
+
+        // Add Syndicate Administrator Role (Direct request)
+        if ( ! get_role( 'syndicate_admin' ) ) {
+            add_role( 'syndicate_admin', 'مسؤول النقابة', array(
+                'read' => true,
+                'upload_files' => true,
+                'edit_posts' => true,
+                'manage_options' => true, // Enabled to allow access to management pages
+            ) );
+        }
+
+        // Add Syndicate Member Role (Direct request)
+        if ( ! get_role( 'syndicate_member' ) ) {
+            add_role( 'syndicate_member', 'عضو نقابة (عامل)', array(
                 'read' => true,
                 'upload_files' => true,
             ) );
