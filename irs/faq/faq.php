@@ -37,7 +37,8 @@ add_action( 'init', function() {
         'public' => true,
         'menu_icon' => 'dashicons-format-chat',
         'supports' => ['title', 'editor'],
-        'show_in_rest' => true
+        'show_in_rest' => true,
+        'show_in_menu' => 'irs-admin-panel'
     ]);
 
     register_taxonomy( 'faq_category', 'faq', [
@@ -49,8 +50,8 @@ add_action( 'init', function() {
 
 // 3. لوحة الإدارة: التقارير ومعلومات المبرمج
 add_action('admin_menu', function() {
-    add_submenu_page('edit.php?post_type=faq', 'تقارير الإعجابات', 'تقارير الإعجابات', 'manage_options', 'faq-stats', 'faq_pro_stats_page');
-    add_submenu_page('edit.php?post_type=faq', 'عن الإضافة', 'دليل الاستخدام ℹ️', 'manage_options', 'faq-about', 'faq_pro_about_page');
+    add_submenu_page('irs-admin-panel', 'تقارير الإعجابات', 'تقارير الإعجابات', 'manage_options', 'faq-stats', 'faq_pro_stats_page');
+    add_submenu_page('irs-admin-panel', 'عن الإضافة', 'دليل الاستخدام ℹ️', 'manage_options', 'faq-about', 'faq_pro_about_page');
 });
 
 function faq_pro_stats_page() {

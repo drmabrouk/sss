@@ -19,7 +19,7 @@ function branches_register_post_types() {
         'public' => true,
         'publicly_queryable' => true,
         'show_ui' => true,
-        'show_in_menu' => true,
+        'show_in_menu' => 'irs-admin-panel',
         'query_var' => true,
         'menu_icon' => 'dashicons-location',
         'supports' => array('title', 'editor', 'thumbnail', 'revisions'),

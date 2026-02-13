@@ -21,7 +21,7 @@ function member_files_register_post_types() {
         'show_ui' => true,
         'supports' => array('title', 'thumbnail'),
         'menu_icon' => 'dashicons-admin-users',
-        'show_in_menu' => true,
+        'show_in_menu' => 'irs-admin-panel',
     ));
 
     // Professional Licenses
