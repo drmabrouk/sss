@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Services
+ * Sub-Plugin Name: Services
  * Description: نظام إدارة الخدمات والطلبات.
  * Version: 1.0.0
  * Author: Jules
@@ -33,7 +33,7 @@ class Services_Plugin {
 	}
 
 	private function init_hooks() {
-		register_activation_hook( __FILE__, array( $this, 'activate' ) );
+		// register_activation_hook( __FILE__, array( $this, 'activate' ) );
 		
 		add_action( 'init', array( $this, 'initialize' ) );
 	}

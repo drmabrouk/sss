@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: ملفات الأعضاء (Member Files)
+ * Sub-Plugin Name: ملفات الأعضاء (Member Files)
  * Description: نظام متكامل لإدارة العضويات، التراخيص المهنية، وتراخيص المؤسسات مع محرك بحث متقدم.
  * Version: 1.0.0
  * Author: Jules

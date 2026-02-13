@@ -1,10 +1,10 @@
 <?php
-/*
-Plugin Name: الفروع (Branches)
-Description: إضافة احترافية لإدارة وعرض فروع المؤسسة مع صفحات تفصيلية ونموذج اتصال لكل فرع.
-Version: 1.1
-Author: Jules
-*/
+/**
+ * Sub-Plugin Name: الفروع (Branches)
+ * Description: إضافة احترافية لإدارة وعرض فروع المؤسسة مع صفحات تفصيلية ونموذج اتصال لكل فرع.
+ * Version: 1.1
+ * Author: Jules
+ */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -19,14 +19,14 @@ require_once BRANCHES_PATH . 'includes/shortcodes.php';
 require_once BRANCHES_PATH . 'includes/routing.php';
 require_once BRANCHES_PATH . 'includes/form-handler.php';
 
-// تفعيل وتعطيل الإضافة
-register_activation_hook( __FILE__, 'branches_plugin_activate' );
+// تفعيل وتعطيل الإضافة (Moved to main irs.php)
+// register_activation_hook( __FILE__, 'branches_plugin_activate' );
 function branches_plugin_activate() {
     branches_register_post_types();
     flush_rewrite_rules();
 }
 
-register_deactivation_hook( __FILE__, 'branches_plugin_deactivate' );
+// register_deactivation_hook( __FILE__, 'branches_plugin_deactivate' );
 function branches_plugin_deactivate() {
     flush_rewrite_rules();
 }
