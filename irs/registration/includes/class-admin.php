@@ -16,19 +16,18 @@ class Member_Files_Admin {
             $menu_title .= ' <span class="awaiting-mod update-plugins count-' . $total_pending . '"><span class="pending-count">' . $total_pending . '</span></span>';
         }
 
-		add_menu_page(
+		add_submenu_page(
+			'irs-admin-panel',
 			'إدارة الحسابات',
 			$menu_title,
 			'manage_options',
 			'member-requests',
-			array( $this, 'display_requests_page' ),
-			'dashicons-admin-users',
-			30
+			array( $this, 'display_requests_page' )
 		);
 
 
         add_submenu_page(
-            'member-requests',
+            'irs-admin-panel',
             'إحصائيات ومراقبة',
             'الإحصائيات',
             'manage_options',
@@ -42,7 +41,7 @@ class Member_Files_Admin {
         }
 
         add_submenu_page(
-            'member-requests',
+            'irs-admin-panel',
             'طلبات تعديل البيانات',
             $updates_title,
             'manage_options',
@@ -51,7 +50,7 @@ class Member_Files_Admin {
         );
 
         add_submenu_page(
-            'member-requests',
+            'irs-admin-panel',
             'إضافة عضو جديد',
             'إضافة عضو',
             'manage_options',
@@ -60,7 +59,7 @@ class Member_Files_Admin {
         );
 
         add_submenu_page(
-            'member-requests',
+            'irs-admin-panel',
             'استيراد الأعضاء',
             'استيراد (Excel)',
             'manage_options',
@@ -69,7 +68,7 @@ class Member_Files_Admin {
         );
 
         add_submenu_page(
-            'member-requests',
+            'irs-admin-panel',
             'إدارة المحافظات',
             'المحافظات',
             'manage_options',
@@ -78,7 +77,7 @@ class Member_Files_Admin {
         );
 
         add_submenu_page(
-            'member-requests',
+            'irs-admin-panel',
             'إعدادات البريد',
             'إعدادات البريد',
             'manage_options',

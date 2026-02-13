@@ -159,18 +159,17 @@ class Services_Admin {
 	}
 
 	public function add_settings_page() {
-		add_menu_page(
+		add_submenu_page(
+			'irs-admin-panel',
 			'إدارة الخدمات',
 			'نظام الخدمات',
 			'manage_options',
 			'services-management',
-			null,
-			'dashicons-clipboard',
-			25
+			array( $this, 'stats_page_html' )
 		);
 
 		add_submenu_page(
-			'services-management',
+			'irs-admin-panel',
 			'تصنيفات الخدمات',
 			'تصنيفات الخدمات',
 			'manage_options',
@@ -178,7 +177,7 @@ class Services_Admin {
 		);
 
 		add_submenu_page(
-			'services-management',
+			'irs-admin-panel',
 			'الإحصائيات',
 			'الإحصائيات',
 			'manage_options',
@@ -187,7 +186,7 @@ class Services_Admin {
 		);
 
 		add_submenu_page(
-			'services-management',
+			'irs-admin-panel',
 			'الإعدادات العامة',
 			'الإعدادات العامة',
 			'manage_options',
